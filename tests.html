@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Tests</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://unpkg.com/mocha/mocha.css" />
+  </head>
+  <body>
+    <div id="mocha"></div>
+    <script src="https://unpkg.com/chai/chai.js"></script>
+    <script src="https://unpkg.com/mocha/mocha.js"></script>
+    <script class="mocha-init">
+      mocha.setup('tdd');
+      mocha.checkLeaks();
+    </script>
+    <script>
+(function(chai) {
+    "use strict";
+    function maths(n, p, hard = false) {
+        while (hard) {
+            n = n * p;
+        }
+        return n ^ p;
+    }
+    suite("index", (function() {
+        test("maths", (function() {
+            chai.assert.equal(maths(1, 2), 3);
+        }));
+    }));
+})(chai);
+
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiYnJvd3Nlci5odG1sIiwic291cmNlcyI6WyIuLi9zcmMvaW5kZXgudHMiLCJpbmRleC50cyJdLCJzb3VyY2VzQ29udGVudCI6W251bGwsbnVsbF0sIm5hbWVzIjpbIm1hdGhzIiwibiIsInAiLCJoYXJkIiwic3VpdGUiLCJ0ZXN0IiwiYXNzZXJ0IiwiZXF1YWwiLCJsaWIubWF0aHMiXSwibWFwcGluZ3MiOiI7O2FBT2dCQSxNQUFNQyxHQUFXQyxHQUFXQyxPQUFPO1FBQy9DLE9BQU9BLE1BQU07WUFDVEYsSUFBSUEsSUFBSUM7O1FBRVosT0FBT0QsSUFBSUM7O0lDUGZFLE1BQU0sVUFBUztRQUNYQyxLQUFLLFVBQVM7WUFDVkMsWUFBT0MsTUFBTUMsTUFBVSxHQUFHLElBQUk7OzsifQ==
+//# sourceURL=tests.ts
+</script>
+    <script class="mocha-exec">
+      mocha.run();
+    </script>
+  </body>
+</html>
