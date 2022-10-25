@@ -2,6 +2,7 @@
 
 import fs from 'fs'
 import path from 'path'
+import {fileURLToPath} from 'node:url'
 
 import alias from '@rollup/plugin-alias'
 import commonjs from '@rollup/plugin-commonjs'
@@ -11,10 +12,12 @@ import typescript from '@rollup/plugin-typescript'
 import virtual from '@rollup/plugin-virtual'
 import {terser} from 'rollup-plugin-terser'
 
+const dir = path.dirname(fileURLToPath(import.meta.url))
+
 const testFiles = fs
-    .readdirSync(__dirname)
+    .readdirSync(dir)
     .filter((f) => f.match(/\.ts$/))
-    .map((f) => path.join(__dirname, f))
+    .map((f) => path.join(dir, f))
 
 const template = `
 <!DOCTYPE html>
